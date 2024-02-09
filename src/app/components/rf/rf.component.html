@@ -1,0 +1,14 @@
+<form [formGroup]="empData" (ngSubmit)="getvalue(empData.value)">
+
+    <div class="col-sm-6">
+        <label for="">Employee name</label>
+        <input type="text" name="fname" formControlName="fName" class="form-control" placeholder="Enter first name">
+
+        <div class="alert alert-danger" *ngIf="empData.get('fName').invalid && empData.get('fName').touched">
+
+            <div *ngIf="empData.get('fName').errors?.required">First name is required</div>
+            <div *ngIf="empData.get('fName').errors?.pattern">Name needs to be between 3-30 characters</div>
+        </div>
+    </div>
+    <button class="btn btn-danger">submit</button>
+</form>

@@ -1,0 +1,42 @@
+<p>directives works!</p>
+<h5>Using *ngIf</h5>
+
+<p *ngIf="true;then ONE; else TWO"></p>
+
+<div *ngIf="true">this is div</div>
+<ng-template #ONE>
+    this is ng-template one
+</ng-template>
+<ng-template #TWO>
+    this is ng-template two
+</ng-template>
+<hr>
+
+<h5>Using *ngFor</h5>
+<div *ngFor="let fruit of fruits">{{fruit}}</div>
+
+<ol>
+    <li *ngFor="let f of fruits">{{f}}</li>
+</ol>
+<hr>
+
+<h5>*ngSwitchCase</h5>
+<h6>>>>without loop</h6>
+<div [ngSwitch]="myChoice">
+    <div *ngSwitchCase="'Apple'">Apple Selected</div>
+    <div *ngSwitchCase="'Banana'">Banana Selected</div>
+    <div *ngSwitchCase="'Orange'">Orange Selected</div>
+    <div *ngSwitchCase="'Mango'">Mango Selected</div>
+    <div *ngSwitchCase="'Strawberry'">Strawberry Selected</div>
+
+    <div *ngSwitchDefault="">No fruit selected</div>
+</div> 
+
+<h6>>>>with loop</h6>
+<div [ngSwitch]="myChoice">
+    <div *ngFor="let fruit of fruits">
+        <div *ngSwitchCase="fruit">{{fruit}} Selected</div>
+    </div>
+
+    <div *ngSwitchDefault="">No fruit selected</div>
+</div>

@@ -1,0 +1,48 @@
+<p>pipes works!</p>
+<hr>
+<div>Original Message: {{msg}}</div>
+<hr>
+<!-- srting pipes -->
+<div>{{msg | uppercase}} </div>
+<div>{{msg | lowercase}} </div>
+<div>{{msg | titlecase}} </div>
+<div>{{msg | slice:10:25}} </div>
+<hr>
+<!-- json pipe -->
+<div>{{emp | json}}</div>
+<hr>
+<!-- number pipe -->
+<div>{{789 | number}}</div>
+<div>{{789 | number:'3.2-5'}}</div>
+<div>{{2.987 | number: '3.3-5'}}</div>
+<div>{{2.987 | number: '2.1-2'}}</div>
+<hr>
+<!-- currency pipe -->
+<div>{{100 | currency}}</div>
+<div>{{100 | currency: 'GBP'}}</div>
+<div>{{100 | currency: 'INR'}}</div>
+<hr>
+<!-- date pipe -->
+<div>{{myDate}}</div>
+<div>{{myDate | date}}</div>
+<div>{{myDate | date:'shortDate'}}</div>
+<div>{{myDate |date:'longDate'}}</div>
+<div>{{myDate |date:'mediumDate'}}</div>
+<hr>
+<table class="table table-dark table-hover">
+    <thead>
+        <tr>
+            <th>ID</th><th>Name</th><th>Gender</th><th>Address</th><th>Contact</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let s of students">
+            <td (click)="setId(s.id)">{{s.id}}</td>
+            <td>{{s.name | gender: s.gender}}</td>
+            <td>{{s. gender}}</td>
+            <td>{{s.address}}</td>
+            <td>{{s.contact}}</td>
+
+        </tr>
+    </tbody>
+</table>

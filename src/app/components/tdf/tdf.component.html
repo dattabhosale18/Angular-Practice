@@ -1,0 +1,82 @@
+<form #myForm="ngForm" (ngSubmit)="getData(myForm.value)" >
+    <div class="row">
+        <div class="col-sm-6">
+            <label>First Name</label>
+           
+            <input type="text" name="fname" #refName="ngModel" class="form-control" placeholder="Enter your first name"  
+            [pattern]="regularExpName" ngModel required
+            [ngClass]="{'is-invalid' : myForm.submitted && refName.errors}">
+
+            <div *ngIf="myForm.submitted && refName.errors?.['required']" class="invalid-feedback">
+            </div>
+
+            <div *ngIf="refName.invalid && refName.touched" class="invalid-feedback">
+                
+                <div *ngIf="refName.errors?.['required']"> First name is required </div>
+                <div *ngIf="refName.errors?.['pattern']">Name is invalid. At least 3 letters (max 30)</div>
+
+            </div>
+        </div>
+        <div class="col-sm-6">
+            <label>Last Name</label>
+           
+            <input type="text" name="lname" #reflName="ngModel" class="form-control" placeholder="Enter your last name"  
+            [pattern]="regularExpName" ngModel required
+            [ngClass]="{'is-invalid' : myForm.submitted && refName.errors}">
+
+            <div *ngIf="myForm.submitted && refName.errors?.['required']" class="invalid-feedback">
+            </div>
+
+            <div *ngIf="reflName.invalid && reflName.touched" class="invalid-feedback">
+                
+                <div *ngIf="reflName.errors?.['required']">Last name is required </div>
+                <div *ngIf="reflName.errors?.['pattern']">Name is invalid. At least 3 letters (max 30)</div>
+
+            </div>
+
+        </div>
+    </div>
+    <br>
+    <!-- row for courses -->
+    <div class="row">
+        <div class="col-sm-6">
+           <label for="">course selection</label>
+
+           <select name="course" class="form-control" #refCourse="ngModel" ngModel required
+           [ngClass]="{'is-invalid' : myForm.submitted && refName.errors}">
+            <option value="">select course</option>
+            <option [value]="c" *ngFor="let c of courses">{{c}}</option>
+           </select>
+
+           <div *ngIf="myForm.submitted && refName.errors?.['required']" class="invalid-feedback">
+        </div>
+
+           <div *ngIf="refCourse.invalid && refCourse.touched" class="invalid-feedback">
+                
+            <div *ngIf="refCourse.errors?.['required']">Course is required </div>
+
+           </div>
+        </div>
+
+        <div class="col-sm-7 mt-2">
+            <label for="">
+                <input type="checkbox" name="term" #refTerm="ngModel" ngModel required
+                [ngClass]="{'is-invalid' : myForm.submitted && refName.errors}">
+                I accept the terms and conditions
+
+            </label>
+            <div *ngIf="myForm.submitted && refName.errors?.['required']" class="invalid-feedback">
+            </div>
+            <div *ngIf="refTerm.invalid && refTerm.touched" class="invalid-feedback">
+                
+                <div *ngIf="refTerm.errors?.['required']"> Please accept the terms and conditons </div>
+    
+               </div>
+
+
+        </div>
+    </div>
+
+    <button type="submit" class="btn btn-primary" >Submit</button>
+<!-- [disabled]="myForm.invalid" -->
+</form>

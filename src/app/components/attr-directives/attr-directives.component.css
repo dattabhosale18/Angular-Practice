@@ -1,0 +1,11 @@
+.txtDanger{
+    color:red;
+    font-family: Georgia, 'Times of Roman' Times, serif;
+    background-color: black;
+}
+
+.txtSuccess{
+    color: greenyellow;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    background-color: black;
+}

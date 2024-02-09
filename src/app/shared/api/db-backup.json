@@ -1,0 +1,52 @@
+{
+  "Employee": [
+    {"id": 101,
+    "name": "Tushar",
+    "post": "Sr React Dev",
+    "salary": 41300,
+    "address": "Delhi"
+    },
+    {
+      "id": 102,
+      "name": "Abhi",
+      "post": "React Dev",
+      "salary": 41000,
+      "address": "Mumbai"
+    },
+    {
+      "id": 103,
+      "name": "Sachin",
+      "post": "Android Dev",
+      "salary": 42000,
+      "address": "Delhi"
+    },
+    {
+      "id": 104,
+      "name": "Neha",
+      "post": "Java Dev",
+      "salary": 43000,
+      "address": "Kochi"
+    },
+    {
+      "id": 105,
+      "name": "Pooja",
+      "post": "Web Dev",
+      "salary": 44000,
+      "address": "Patna"
+    },
+    {
+      "id": 106,
+      "name": "Dilip",
+      "post": "Sr. Angular Developer",
+      "salary": 51000,
+      "address": "Bangluru"
+    },
+    {
+      "id": 107,
+      "name": "Ameya",
+      "post": "Sr. react Developer",
+      "salary": 50000,
+      "address": "Chennai"
+    }
+  ]
+}

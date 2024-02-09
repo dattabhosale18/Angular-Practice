@@ -1,0 +1,32 @@
+<h2 appChangeColor>Change my color</h2>
+
+<div>
+    <input type="radio" name="color" (click)="setColor('red')" > Red
+    <input type="radio" name="color" (click)="setColor('green')" > Green
+    <input type="radio" name="color" (click)="setColor('blue')" > Blue
+</div>
+
+<h4 appChangeColor>h4 element having the appChangeColor custom directive </h4>
+<hr>
+<div appChangeColor>div element having the appChangeColor custom directive</div>
+<hr>
+<p appChangeColor>p element having the appChangeColor custom directive</p>
+<hr>
+
+<table class="table table-dark">
+    <thead>
+        <tr>
+            <th>Product Id </th>
+            <th>Product Name </th>
+            <th>Product Price </th>
+        </tr>
+    </thead>
+
+    <tbody>
+        <tr *ngFor="let p of Products">
+            <td>{{p.productId}}</td>
+            <td>{{p.productName}}</td>
+            <td>{{p.productPrice}}</td>
+        </tr>
+    </tbody>
+</table>

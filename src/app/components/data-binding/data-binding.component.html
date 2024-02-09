@@ -1,0 +1,44 @@
+<p>data-binding works!</p>
+<!--interpolation {{}} ts=> html -->
+<h5>Interpolation</h5>
+<p>welcome {{username}}</p> 
+<p>your age is {{age}}</p>
+<div>This is a div create by {{username}} </div>
+<div>is yash a adult? {{isAdult}}</div>
+<hr>
+
+<!--property binding [] ts=> html-->
+<h5>property binding</h5>  
+<!--<img src="{{imgpath}}" alt="image" width="250px">-->
+<img [src]="imgpath" alt="image" width="200px"> 
+<hr>
+
+<!--event binding () html=> ts -->
+<button (click)="clicked()">click me</button>
+<hr>
+
+<h5>interpolation vs property binding</h5>
+<!--interpoltion vs property binding-->
+Interpolation: <input type="text" disabled="{{disableinput}}">
+<br>
+property binding: <input type="text" [disabled]="disableinput">
+<br>
+<button (click)="enableinput()">enable input</button>
+<hr>
+
+<!--two way binding [()] ts=>html-->
+<h5>two way binding</h5>
+<form>
+    <label for="">enter a name</label>
+    <input type="text" name="name" [(ngModel)]="myname"> {{myname}}  
+</form>
+<hr>
+
+<!-- reference variable -->
+<h5>reference variable</h5>
+<form>
+    <label for="">enter message</label>
+    <input type="text" name="mymessage" #myinputbox>
+
+    <button (click)="showmsg(myinputbox.value)">show message</button>
+</form>
